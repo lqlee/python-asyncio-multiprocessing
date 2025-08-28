@@ -12,10 +12,11 @@ async def play () :
 async def main() :
   print('enter main')
   start = time.time()
+  '''
   tasks = []
   for _ in range(10) :
-    tasks.append(play())
-  await asyncio.gather(*tasks)
+    tasks.append(play())'''
+  await asyncio.gather(*[play() for _ in range(10)])
   print(f'total time : {time.time() - start} seconds')
 
 # main()
